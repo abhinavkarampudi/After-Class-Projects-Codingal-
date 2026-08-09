@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #17324d;
+    background-color: #dff3ff;
+    background-image: linear-gradient( orange,red orange);
+    background-repeat: repeat;
+}
+
+.container 
+
+h1 {
+    text-align: center;
+    background-image: linear-gradient(cyan, darkblue);
+    font-size: 42px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #58758e;
+    font-size: 18px;
+}
+
+.weather-card {
+    border-radius: 25px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(cyan,blue,darkblue);
+}
+
+.weather-icon {
+    font-size: 90px;
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% {}
+
+    50% {}
+
+    100% {}
+}
+
+#temperature {
+    font-size: 55px;
+    font-weight: bold;
+}
+
+.details {
+    font-size: 18px;
+}
+
+.forecast {
+    border-radius: 20px;
+    background-image: linear-gradient( pink,magenta);
+    text-align: center;
+}
+
+.forecast h2 {
+    color: #1261a0;
+    text-align: center;
+}
+
+.day {
+    background-color: white;
+    border-radius: 12px;
+    font-size: 17px;
+}
