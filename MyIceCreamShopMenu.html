@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sweet Scoop Ice Cream</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #fff0f5, #e0f7fa);
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #d81b60;
+            font-size: 40px;
+        }
+
+        h1+p {
+            color: #555;
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        .description::first-letter {
+            font-size: 35px;
+            color: #e91e63;
+            font-weight: bold;
+        }
+
+        .menu {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #7b1fa2;
+        }
+
+        .flavours>li {
+            list-style-type: none;
+            background-color: #fce4ec;
+            padding: 12px;
+            margin: 8px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .flavours>li:hover {
+            background-color: #f48fb1;
+            color: white;
+            font-size: 18px;
+        }
+
+        .flavours li:nth-child(3) {
+            background-color: #ffcc80;
+            border: 3px solid #ff9800;
+            font-weight: bold;
+        }
+
+        .special {
+            color: #e65100;
+        }
+
+        .extras>li {
+            list-style-type: none;
+            background-color: #ede7f6;
+            padding: 10px;
+            margin: 7px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .extras>li:hover {
+            background-color: #9575cd;
+            color: white;
+        }
+
+        button {
+            background-color: #d81b60;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #880e4f;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🍦 Sweet Scoop Ice Cream 🍦</h1>
+
+    <p class="description">
+        Welcome to Sweet Scoop, where every scoop is made with love!
+    </p>
+
+    <div class="menu">
+
+        <h2>🍨 Our Flavours</h2>
+
+        <ul class="flavours">
+            <li>🍓 Strawberry</li>
+            <li>🍫 Chocolate</li>
+            <li class="special">⭐ Vanilla - Today's Special!</li>
+            <li>🥭 Mango</li>
+            <li>🍪 Cookies & Cream</li>
+            <li>🍌 Banana</li>
+            <li>🍍 Pineapple</li>
+            <li>🥥 Coconut</li>
+            <li>☕ Coffee</li>
+            <li>🍯 Butterscotch</li>
+            <li>🍬 Caramel</li>
+            <li>🫐 Blueberry</li>
+            <li>🍋 Lemon</li>
+            <li>🍑 Peach</li>
+            <li>🍉 Watermelon</li>
+            <li>🌰 Pistachio</li>
+            <li>🥜 Peanut Butter</li>
+            <li>🍒 Cherry</li>
+            <li>🍇 Blackcurrant</li>
+            <li>🍵 Matcha</li>
+            <li>🍓 Raspberry</li>
+            <li>🍊 Orange Cream</li>
+            <li>🍏 Green Apple</li>
+            <li>🥝 Kiwi</li>
+            <li>🍈 Muskmelon</li>
+            <li>🥭 Alphonso Mango</li>
+            <li>🍫 Chocolate Fudge</li>
+            <li>🍮 French Vanilla</li>
+            <li>🍰 Red Velvet</li>
+            <li>🧁 Birthday Cake</li>
+        </ul>
+
+        <h2>🍫 Extras & Toppings</h2>
+
+        <ul class="extras">
+            <li>🍫 Chocolate Sauce</li>
+            <li>🍯 Caramel Sauce</li>
+            <li>🍓 Strawberry Sauce</li>
+            <li>🌈 Rainbow Sprinkles</li>
+            <li>🍫 Chocolate Sprinkles</li>
+            <li>🥜 Crushed Peanuts</li>
+            <li>🍪 Cookie Crumbs</li>
+            <li>🍫 Chocolate Chips</li>
+            <li>🍬 Jelly Beans</li>
+            <li>🥥 Coconut Flakes</li>
+            <li>🍒 Cherries</li>
+            <li>🍓 Fresh Strawberries</li>
+            <li>🍦 Whipped Cream</li>
+            <li>🍫 Chocolate Shavings</li>
+            <li>🍪 Mini Cookies</li>
+        </ul>
+
+        <h2>🥤 Drinks</h2>
+
+        <ul class="extras">
+            <li>🥤 Chocolate Milkshake</li>
+            <li>🍓 Strawberry Milkshake</li>
+            <li>🥭 Mango Smoothie</li>
+            <li>☕ Cold Coffee</li>
+            <li>🍫 Chocolate Frappe</li>
+        </ul>
+
+        <br>
+
+    <h2>🛒 Place Your Order</h2>
+    
+    <form>
+    
+        <h3>🍦 Choose Your Flavours</h3>
+    
+        <input type="checkbox" name="flavour" value="Strawberry"> 🍓 Strawberry<br>
+        <input type="checkbox" name="flavour" value="Chocolate"> 🍫 Chocolate<br>
+        <input type="checkbox" name="flavour" value="Vanilla"> ⭐ Vanilla<br>
+        <input type="checkbox" name="flavour" value="Mango"> 🥭 Mango<br>
+        <input type="checkbox" name="flavour" value="Cookies & Cream"> 🍪 Cookies & Cream<br>
+        <input type="checkbox" name="flavour" value="Banana"> 🍌 Banana<br>
+        <input type="checkbox" name="flavour" value="Pineapple"> 🍍 Pineapple<br>
+        <input type="checkbox" name="flavour" value="Coconut"> 🥥 Coconut<br>
+        <input type="checkbox" name="flavour" value="Coffee"> ☕ Coffee<br>
+        <input type="checkbox" name="flavour" value="Butterscotch"> 🍯 Butterscotch<br>
+        <input type="checkbox" name="flavour" value="Caramel"> 🍬 Caramel<br>
+        <input type="checkbox" name="flavour" value="Blueberry"> 🫐 Blueberry<br>
+        <input type="checkbox" name="flavour" value="Lemon"> 🍋 Lemon<br>
+        <input type="checkbox" name="flavour" value="Peach"> 🍑 Peach<br>
+        <input type="checkbox" name="flavour" value="Watermelon"> 🍉 Watermelon<br>
+        <input type="checkbox" name="flavour" value="Pistachio"> 🌰 Pistachio<br>
+        <input type="checkbox" name="flavour" value="Peanut Butter"> 🥜 Peanut Butter<br>
+        <input type="checkbox" name="flavour" value="Cherry"> 🍒 Cherry<br>
+        <input type="checkbox" name="flavour" value="Blackcurrant"> 🍇 Blackcurrant<br>
+        <input type="checkbox" name="flavour" value="Matcha"> 🍵 Matcha<br>
+        <input type="checkbox" name="flavour" value="Raspberry"> 🍓 Raspberry<br>
+        <input type="checkbox" name="flavour" value="Orange Cream"> 🍊 Orange Cream<br>
+        <input type="checkbox" name="flavour" value="Green Apple"> 🍏 Green Apple<br>
+        <input type="checkbox" name="flavour" value="Kiwi"> 🥝 Kiwi<br>
+        <input type="checkbox" name="flavour" value="Muskmelon"> 🍈 Muskmelon<br>
+        <input type="checkbox" name="flavour" value="Alphonso Mango"> 🥭 Alphonso Mango<br>
+        <input type="checkbox" name="flavour" value="Chocolate Fudge"> 🍫 Chocolate Fudge<br>
+        <input type="checkbox" name="flavour" value="French Vanilla"> 🍮 French Vanilla<br>
+        <input type="checkbox" name="flavour" value="Red Velvet"> 🍰 Red Velvet<br>
+        <input type="checkbox" name="flavour" value="Birthday Cake"> 🧁 Birthday Cake<br>
+    
+    
+        <h3>🍫 Choose Your Extras</h3>
+    
+        <input type="checkbox" name="extra" value="Chocolate Sauce"> 🍫 Chocolate Sauce<br>
+        <input type="checkbox" name="extra" value="Caramel Sauce"> 🍯 Caramel Sauce<br>
+        <input type="checkbox" name="extra" value="Strawberry Sauce"> 🍓 Strawberry Sauce<br>
+        <input type="checkbox" name="extra" value="Rainbow Sprinkles"> 🌈 Rainbow Sprinkles<br>
+        <input type="checkbox" name="extra" value="Chocolate Sprinkles"> 🍫 Chocolate Sprinkles<br>
+        <input type="checkbox" name="extra" value="Crushed Peanuts"> 🥜 Crushed Peanuts<br>
+        <input type="checkbox" name="extra" value="Cookie Crumbs"> 🍪 Cookie Crumbs<br>
+        <input type="checkbox" name="extra" value="Chocolate Chips"> 🍫 Chocolate Chips<br>
+        <input type="checkbox" name="extra" value="Jelly Beans"> 🍬 Jelly Beans<br>
+        <input type="checkbox" name="extra" value="Coconut Flakes"> 🥥 Coconut Flakes<br>
+        <input type="checkbox" name="extra" value="Cherries"> 🍒 Cherries<br>
+        <input type="checkbox" name="extra" value="Fresh Strawberries"> 🍓 Fresh Strawberries<br>
+        <input type="checkbox" name="extra" value="Whipped Cream"> 🍦 Whipped Cream<br>
+        <input type="checkbox" name="extra" value="Chocolate Shavings"> 🍫 Chocolate Shavings<br>
+        <input type="checkbox" name="extra" value="Mini Cookies"> 🍪 Mini Cookies<br>
+    
+    
+        <h3>🥤 Choose Your Drinks</h3>
+    
+        <input type="checkbox" name="drink" value="Chocolate Milkshake"> 🥤 Chocolate Milkshake<br>
+        <input type="checkbox" name="drink" value="Strawberry Milkshake"> 🍓 Strawberry Milkshake<br>
+        <input type="checkbox" name="drink" value="Mango Smoothie"> 🥭 Mango Smoothie<br>
+        <input type="checkbox" name="drink" value="Cold Coffee"> ☕ Cold Coffee<br>
+        <input type="checkbox" name="drink" value="Chocolate Frappe"> 🍫 Chocolate Frappe<br>
+    
+        <br>
+    
+        <label>🍨 Quantity:</label>
+        <input type="number" min="1" value="1">
+    
+        <br><br>
+    
+        <button type="submit">🍦 Place Order 🍦</button>
+    
+    </form>
+        
+
+    </div>
+
+</body>
+
+</html>
