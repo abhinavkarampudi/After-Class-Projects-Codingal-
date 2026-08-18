@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoo Rescue Tracker</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #263238;
+            background-image: linear-gradient(135deg, #e0f7fa, #e8f5e9, #fff8e1, #f3e5f5);
+        }
+
+        .rescue-alert {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-image: linear-gradient(90deg, #d32f2f, #ff5252, #ff7043, #d32f2f);
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            padding: 14px;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            padding: 95px 20px 55px;
+            background-image: linear-gradient(120deg, #004d40, #00796b, #26a69a, #66bb6a);
+        }
+
+        header h1 {
+            font-size: 44px;
+            margin: 10px;
+            text-shadow: 3px 3px 6px #004d40;
+        }
+
+        header p {
+            font-size: 19px;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 48px;
+            background-image: linear-gradient(90deg, #1b5e20, #388e3c, #66bb6a, #388e3c, #1b5e20);
+            padding: 16px;
+            text-align: center;
+            
+        }
+
+        .sticky-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 20px;
+            font-size: 17px;
+        }
+
+        .sticky-nav a:hover {
+            color: #fff176;
+        }
+
+        main {
+            width: 85%;
+            margin: 30px auto;
+        }
+
+        section {
+            background-image: linear-gradient(145deg, #ffffff, #f1f8e9, #e8f5e9);
+            padding: 30px;
+            margin-bottom: 35px;
+            border-radius: 18px;
+            border: 2px solid #a5d6a7;
+        }
+
+        section h2 {
+            color: #1b5e20;
+            border-bottom: 4px solid #66bb6a;
+            padding-bottom: 12px;
+            background-image: linear-gradient(90deg, #1b5e20, #43a047, #81c784);
+            text-align: center;
+            color: white;
+        }
+
+        .animal-card {
+            position: static;
+            background-image: linear-gradient(135deg, #f1f8e9, #ffffff, #e0f2f1);
+            border: 2px solid #81c784;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            min-height: 180px;
+        }
+
+        .animal-card:nth-child(2) {
+            background-image: linear-gradient(135deg, #e0f7fa, #ffffff, #e8eaf6);
+        }
+
+        .animal-card:nth-child(3) {
+            background-image: linear-gradient(135deg, #fff3e0, #ffffff, #ffebee);
+        }
+
+        .animal-card:nth-child(4) {
+            background-image: linear-gradient(135deg, #f3e5f5, #ffffff, #e8f5e9);
+        }
+
+        .animal-card:nth-child(5) {
+            background-image: linear-gradient(135deg, #fffde7, #ffffff, #e0f7fa);
+        }
+
+        .animal-card:nth-child(6) {
+            background-image: linear-gradient(135deg, #e8eaf6, #ffffff, #fce4ec);
+        }
+
+        .animal-card:nth-child(7) {
+            background-image: linear-gradient(135deg, #e0f2f1, #ffffff, #fff8e1);
+        }
+
+        .animal-card h3 {
+            color: #33691e;
+            font-size: 25px;
+        }
+
+        .static-card {
+            position: static;
+        }
+
+        .relative-card {
+            position: relative;
+            left: 35px;
+            top: 10px;
+            margin-right: 35px;
+        }
+
+        .absolute-card {
+            position: relative;
+        }
+
+        .safe-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-image: linear-gradient(90deg, #2e7d32, #43a047, #66bb6a);
+            color: white;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .status {
+            position: relative;
+            top: -5px;
+            display: inline-block;
+            background-image: linear-gradient(90deg, #43a047, #66bb6a, #81c784);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .zone {
+            position: relative;
+            background-image: linear-gradient(120deg, #e8f5e9, #ffffff, #e0f7fa);
+            border-left: 8px solid #388e3c;
+            padding: 22px;
+            margin: 20px 0;
+            border-radius: 12px;
+        }
+
+        .zone:nth-child(3) {
+            background-image: linear-gradient(120deg, #fff3e0, #ffffff, #fff8e1);
+            border-left-color: #f57c00;
+        }
+
+        .zone:nth-child(4) {
+            background-image: linear-gradient(120deg, #e8eaf6, #ffffff, #f3e5f5);
+            border-left-color: #5e35b1;
+        }
+
+        .zone:nth-child(5) {
+            background-image: linear-gradient(120deg, #e0f7fa, #ffffff, #e8f5e9);
+            border-left-color: #00897b;
+        }
+
+        .zone h3 {
+            color: #2e7d32;
+            font-size: 22px;
+        }
+
+        #about {
+            background-image: linear-gradient(135deg, #ede7f6, #ffffff, #e0f2f1, #fff3e0);
+        }
+
+
+        footer {
+            background-image: linear-gradient(90deg, #263238, #37474f, #455a64, #263238);
+            color: white;
+            text-align: center;
+            padding: 40px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="rescue-alert">
+        🚨 RESCUE ALERT: Koala rescue operation in progress!
+    </div>
+
+    <header>
+        <h1>🦁 Zoo Rescue Tracker</h1>
+        <p>Tracking animals that need help around the zoo</p>
+    </header>
+
+    <nav class="sticky-nav">
+        <a href="#animals">Animals</a>
+        <a href="#zones">Rescue Zones</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <main>
+
+        <section id="animals">
+
+            <h2>🐾 Animals Needing Rescue</h2>
+
+            <div class="animal-card static-card">
+                <span class="status">SAFE</span>
+                <h3>🦁 Leo the Lion</h3>
+                <p><strong>Location:</strong> Savannah Zone</p>
+                <p>
+                    Leo is resting safely inside the Savannah enclosure.
+                    The rescue team has checked his area.
+                </p>
+            </div>
+
+            <div class="animal-card relative-card">
+                <span class="status">RESCUED</span>
+                <h3>🐨 Koko the Koala</h3>
+                <p><strong>Location:</strong> Australian Zone</p>
+                <p>
+                    Koko was found near the edge of the enclosure.
+                    The rescue team safely moved Koko back to the habitat.
+                </p>
+            </div>
+
+            <div class="animal-card absolute-card">
+                <span class="status">SAFE</span>
+                <h3>🐯 Tara the Tiger</h3>
+                <p><strong>Location:</strong> Tiger Zone</p>
+                <p>
+                    Tara has been located and is being monitored
+                    by the zoo rescue team.
+                </p>
+                <div class="safe-tag">SAFE ZONE</div>
+            </div>
+
+            <div class="animal-card">
+                <span class="status">CHECKED</span>
+                <h3>🐘 Ella the Elephant</h3>
+                <p><strong>Location:</strong> Elephant Valley</p>
+                <p>
+                    Ella has been checked by the animal care team
+                    and everything looks good.
+                </p>
+            </div>
+
+            <div class="animal-card">
+                <span class="status">SAFE</span>
+                <h3>🦒 Gerry the Giraffe</h3>
+                <p><strong>Location:</strong> African Plains</p>
+                <p>
+                    Gerry is safely inside the enclosure and
+                    enjoying the afternoon.
+                </p>
+            </div>
+
+            <div class="animal-card">
+                <span class="status">MONITORED</span>
+                <h3>🦓 Zara the Zebra</h3>
+                <p><strong>Location:</strong> Grassland Zone</p>
+                <p>
+                    Zara is being monitored by the zoo staff
+                    after wandering near the fence.
+                </p>
+            </div>
+
+            <div class="animal-card">
+                <span class="status">SAFE</span>
+                <h3>🐼 Pika the Panda</h3>
+                <p><strong>Location:</strong> Bamboo Forest</p>
+                <p>
+                    Pika is safely inside the bamboo habitat.
+                    No rescue action is currently required.
+                </p>
+            </div>
+
+        </section>
+
+        <section id="zones">
+
+            <h2>📍 Rescue Zones</h2>
+
+            <div class="zone">
+                <h3>African Plains</h3>
+                <p>
+                    Home to lions, giraffes, zebras and other
+                    African wildlife.
+                </p>
+            </div>
+
+            <div class="zone">
+                <h3>Australian Zone</h3>
+                <p>
+                    Home to koalas, kangaroos and other Australian animals.
+                </p>
+            </div>
+
+            <div class="zone">
+                <h3>Asian Forest</h3>
+                <p>
+                    Home to pandas, tigers and other Asian wildlife.
+                </p>
+            </div>
+
+            <div class="zone">
+                <h3>Elephant Valley</h3>
+                <p>
+                    A large habitat designed for elephants.
+                </p>
+            </div>
+
+        </section>
+
+        <section id="about">
+
+            <h2>ℹ️ About Zoo Rescue Tracker</h2>
+
+            <p>
+                Zoo Rescue Tracker is a demonstration webpage designed
+                to show how CSS positioning works.
+            </p>
+
+            <p>
+                Different elements on this page use static, relative,
+                absolute, fixed and sticky positioning.
+            </p>
+
+            <p>
+                Scroll through the page to see how the different
+                positioning properties behave.
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>🦒 Zoo Rescue Tracker | CSS Positioning Project</p>
+        <p>Made for learning HTML & CSS</p>
+    </footer>
+
+</body>
+
+</html>
+```
+
